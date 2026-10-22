@@ -22,7 +22,7 @@ html, body {
   padding: 0;
   margin: 0;
   overflow: hidden;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: Tahoma, Verdana, sans-serif;
   font-size: 16px;
   background-color: #000;
   color: #fff;
@@ -827,4 +827,16 @@ body.view-control-buttons .viewControlButton {
 }
 .viewControlButton-6 {
   margin-left: 105px;
+}
+
+/* custom list addition 10/22/2026 */
+.custom-list {
+    list-style: cirlcle;
+    list-style-type: disc;
+    padding-left: 30px;
+}
+
+/* no hidden hotspots 10/22/2026 */
+.info-hotspot.topmost {
+  z-index: 1000 !important;
 }

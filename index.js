@@ -339,10 +339,22 @@
     modal.classList.add('info-hotspot-modal');
     document.body.appendChild(modal);
 
+	var openInfoHotspot = null; //Added 10/26/2026
+	
+	// Replaced original toggle 10/22/2026
     var toggle = function() {
-      wrapper.classList.toggle('visible');
-      modal.classList.toggle('visible');
-    };
+  	var isOpen = wrapper.classList.contains('visible');
+
+  	if (openInfoHotspot && openInfoHotspot !== toggle) {
+    	openInfoHotspot(false);
+  	}
+
+  	wrapper.classList.toggle('visible', !isOpen);
+  	modal.classList.toggle('visible', !isOpen);
+  	wrapper.classList.toggle('topmost', !isOpen);
+
+ 	openInfoHotspot = isOpen ? null : toggle;
+	};
 
     // Show content when hotspot is clicked.
     wrapper.querySelector('.info-hotspot-header').addEventListener('click', toggle);
